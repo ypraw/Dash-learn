@@ -1,0 +1,20 @@
+version: "3.7"
+
+#
+services:
+  dash-bootstrap:
+    build:
+      context: .
+    container_name: dash-bootstrap
+    ports:
+      - "8050:8050"
+    networks:
+      - dash-bootstrap-networks
+    #   devnet:
+    #     external:
+    #       name: development
+    restart: unless-stopped
+
+networks:
+  dash-bootstrap-networks:
+    driver: bridge
